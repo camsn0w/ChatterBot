@@ -2,7 +2,6 @@ import os
 import io
 import glob
 from pathlib import Path
-from chatterbot.exceptions import OptionalDependencyImportError
 
 try:
     from chatterbot_corpus.corpus import DATA_DIRECTORY
@@ -45,16 +44,7 @@ def read_corpus(file_name):
     """
     Read and return the data from a corpus json file.
     """
-    try:
-        import yaml
-    except ImportError:
-        message = (
-            'Unable to import "yaml".\n'
-            'Please install "pyyaml" to enable chatterbot corpus functionality:\n'
-            'pip3 install pyyaml'
-        )
-        raise OptionalDependencyImportError(message)
-
+    import yaml
     with io.open(file_name, encoding='utf-8') as data_file:
         return yaml.safe_load(data_file)
 

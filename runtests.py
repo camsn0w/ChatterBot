@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!./env/bin/python
 
 """
 This is the test runner for the ChatterBot's Django tests.

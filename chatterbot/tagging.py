@@ -1,4 +1,6 @@
 import string
+
+import chatterbot.spacywrapper
 from chatterbot import languages
 
 
@@ -23,7 +25,7 @@ class PosLemmaTagger(object):
 
         self.punctuation_table = str.maketrans(dict.fromkeys(string.punctuation))
 
-        self.nlp = spacy.load(self.language.ISO_639_1.lower())
+        self.nlp = chatterbot.spacywrapper.CheckAndGetNlp()
 
     def get_text_index_string(self, text):
         """
