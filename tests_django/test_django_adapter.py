@@ -1,7 +1,7 @@
 from django.test import TestCase
-from chatterbot.storage import DjangoStorageAdapter
-from chatterbot.conversation import Statement as StatementObject
-from chatterbot.ext.django_chatterbot.models import Statement
+from pychatbot.storage import DjangoStorageAdapter
+from pychatbot.conversation import Statement as StatementObject
+from pychatbot.ext.django_pychatbot.models import Statement
 
 
 class DjangoAdapterTestCase(TestCase):
@@ -91,7 +91,7 @@ class DjangoStorageAdapterTests(DjangoAdapterTestCase):
         self.assertEqual(random_statement.text, statement.text)
 
     def test_get_random_no_data(self):
-        from chatterbot.storage import StorageAdapter
+        from pychatbot.storage import StorageAdapter
 
         with self.assertRaises(StorageAdapter.EmptyDatabaseException):
             self.adapter.get_random()

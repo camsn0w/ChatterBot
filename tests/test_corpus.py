@@ -1,25 +1,25 @@
 import os
 import io
 from unittest import TestCase
-from chatterbot import corpus
+from pychatbot import corpus
 
 
 class CorpusLoadingTestCase(TestCase):
 
     def test_load_corpus_chinese(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.chinese')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.chinese')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_english(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.english')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.english')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_english_greetings(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.english.greetings')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.english.greetings')
         corpus_data = list(corpus.load_corpus(*data_files))
 
         self.assertEqual(len(corpus_data), 1)
@@ -28,10 +28,10 @@ class CorpusLoadingTestCase(TestCase):
 
         self.assertIn(['Hi', 'Hello'], conversations)
         self.assertEqual(['greetings'], categories)
-        self.assertIn('chatterbot_corpus/data/english/greetings.yml', file_path)
+        self.assertIn('pychatbot_corpus/data/english/greetings.yml', file_path)
 
     def test_load_corpus_english_categories(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.english.greetings')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.english.greetings')
         corpus_data = list(corpus.load_corpus(*data_files))
 
         self.assertEqual(len(corpus_data), 1)
@@ -41,61 +41,61 @@ class CorpusLoadingTestCase(TestCase):
             self.assertIn('greetings', categories)
 
     def test_load_corpus_french(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.french')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.french')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_german(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.german')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.german')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_hindi(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.hindi')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.hindi')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_indonesian(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.indonesian')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.indonesian')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_italian(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.italian')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.italian')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_marathi(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.marathi')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.marathi')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_portuguese(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.portuguese')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.portuguese')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_russian(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.russian')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.russian')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_spanish(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.spanish')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.spanish')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
 
     def test_load_corpus_telugu(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.telugu')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.telugu')
         corpus_data = corpus.load_corpus(*data_files)
 
         self.assertTrue(len(list(corpus_data)))
@@ -107,9 +107,9 @@ class CorpusUtilsTestCase(TestCase):
         """
         Test that a dotted path is properly converted to a file address.
         """
-        path = corpus.get_file_path('chatterbot.corpus.english')
+        path = corpus.get_file_path('pychatbot.corpus.english')
         self.assertIn(
-            os.path.join('chatterbot_corpus', 'data', 'english'),
+            os.path.join('pychatbot_corpus', 'data', 'english'),
             path
         )
 
@@ -122,7 +122,7 @@ class CorpusUtilsTestCase(TestCase):
         self.assertIn('conversations', data)
 
     def test_list_english_corpus_files(self):
-        data_files = corpus.list_corpus_files('chatterbot.corpus.english')
+        data_files = corpus.list_corpus_files('pychatbot.corpus.english')
 
         for data_file in data_files:
             self.assertIn('.yml', data_file)
@@ -131,7 +131,7 @@ class CorpusUtilsTestCase(TestCase):
         """
         Test loading the entire corpus of languages.
         """
-        corpus_files = corpus.list_corpus_files('chatterbot.corpus')
+        corpus_files = corpus.list_corpus_files('pychatbot.corpus')
         corpus_data = corpus.load_corpus(*corpus_files)
 
         self.assertTrue(len(list(corpus_data)))

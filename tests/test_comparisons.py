@@ -1,11 +1,11 @@
 """
-Test ChatterBot's statement comparison algorithms.
+Test pychatbot's statement comparison algorithms.
 """
 
 from unittest import TestCase
-from chatterbot.conversation import Statement
-from chatterbot import comparisons
-from chatterbot import languages
+from pychatbot.conversation import Statement
+from pychatbot import comparisons
+from pychatbot import languages
 
 
 class LevenshteinDistanceTestCase(TestCase):

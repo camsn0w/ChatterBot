@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.logic import SpecificResponseAdapter
-from chatterbot.conversation import Statement
+from pychatbot.logic import SpecificResponseAdapter
+from pychatbot.conversation import Statement
 
 
 class SpecificResponseAdapterTestCase(ChatBotTestCase):

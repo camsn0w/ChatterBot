@@ -2,7 +2,7 @@
 Django settings for when tests are run.
 """
 import os
-from chatterbot import constants
+from pychatbot import constants
 
 DEBUG = True
 
@@ -14,21 +14,21 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'chatterbot.ext.django_chatterbot',
+    'pychatbot.ext.django_pychatbot',
     'tests_django',
 ]
 
-CHATTERBOT = {
-    'name': 'Test Django ChatterBot',
+pychatbot = {
+    'name': 'Test Django pychatbot',
     'logic_adapters': [
         {
-            'import_path': 'chatterbot.logic.BestMatch',
+            'import_path': 'pychatbot.logic.BestMatch',
         },
         {
-            'import_path': 'chatterbot.logic.MathematicalEvaluation',
+            'import_path': 'pychatbot.logic.MathematicalEvaluation',
         }
     ],
-    'storage_adapter': 'chatterbot.storage.DjangoStorageAdapter',
+    'storage_adapter': 'pychatbot.storage.DjangoStorageAdapter',
     'django_app_name': constants.DEFAULT_DJANGO_APP_NAME,
     'initialize': False
 }

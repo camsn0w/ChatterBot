@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.conversation import Statement
-from chatterbot import preprocessors
+from pychatbot.conversation import Statement
+from pychatbot import preprocessors
 
 
 class PreprocessorIntegrationTestCase(ChatBotTestCase):
@@ -17,7 +17,7 @@ class PreprocessorIntegrationTestCase(ChatBotTestCase):
 
 class CleanWhitespacePreprocessorTestCase(ChatBotTestCase):
     """
-    Make sure that ChatterBot's whitespace removing preprocessor works as expected.
+    Make sure that pychatbot's whitespace removing preprocessor works as expected.
     """
 
     def test_clean_whitespace(self):
@@ -44,7 +44,7 @@ class CleanWhitespacePreprocessorTestCase(ChatBotTestCase):
 
 class HTMLUnescapePreprocessorTestCase(ChatBotTestCase):
     """
-    Make sure that ChatterBot's html unescaping preprocessor works as expected.
+    Make sure that pychatbot's html unescaping preprocessor works as expected.
     """
 
     def test_html_unescape(self):
@@ -69,7 +69,7 @@ class HTMLUnescapePreprocessorTestCase(ChatBotTestCase):
 
 class ConvertToASCIIPreprocessorTestCase(ChatBotTestCase):
     """
-    Make sure that ChatterBot's ASCII conversion preprocessor works as expected.
+    Make sure that pychatbot's ASCII conversion preprocessor works as expected.
     """
 
     def test_convert_to_ascii(self):

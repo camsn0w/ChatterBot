@@ -60,8 +60,8 @@ class ExamplesSmokeTestCase(TestCase):
             'a GUI during testing.'
         )
 
-    def test_training_example_chatterbot_corpus(self):
-        from examples import training_example_chatterbot_corpus # NOQA
+    def test_training_example_pychatbot_corpus(self):
+        from examples import training_example_pychatbot_corpus # NOQA
 
     def test_training_example_list_data(self):
         from examples import training_example_list_data # NOQA

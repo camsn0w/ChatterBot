@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
 from unittest import TestCase
-from chatterbot import utils
+from pychatbot import utils
 
 
 class UtilityTests(TestCase):

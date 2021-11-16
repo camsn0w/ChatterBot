@@ -1,12 +1,12 @@
 from django.test import TestCase
-from chatterbot.conversation import Statement as StatementObject
-from chatterbot.ext.django_chatterbot.models import Statement as StatementModel
+from pychatbot.conversation import Statement as StatementObject
+from pychatbot.ext.django_pychatbot.models import Statement as StatementModel
 
 
 class StatementIntegrationTestCase(TestCase):
     """
     Test case to make sure that the Django Statement model
-    and ChatterBot Statement object have a common interface.
+    and pychatbot Statement object have a common interface.
     """
 
     def setUp(self):

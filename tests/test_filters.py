@@ -1,5 +1,5 @@
 from tests.base_case import ChatBotMongoTestCase
-from chatterbot import filters
+from pychatbot import filters
 
 
 class RepetitiveResponseFilterTestCase(ChatBotMongoTestCase):
@@ -11,8 +11,8 @@ class RepetitiveResponseFilterTestCase(ChatBotMongoTestCase):
         """
         Test that repetitive responses are filtered out of the results.
         """
-        from chatterbot.conversation import Statement
-        from chatterbot.trainers import ListTrainer
+        from pychatbot.conversation import Statement
+        from pychatbot.trainers import ListTrainer
 
         self.chatbot.filters = (filters.get_recent_repeated_responses, )
 

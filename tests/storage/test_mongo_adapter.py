@@ -1,6 +1,6 @@
 from unittest import TestCase
-from chatterbot.storage import MongoDatabaseAdapter
-from chatterbot.conversation import Statement
+from pychatbot.storage import MongoDatabaseAdapter
+from pychatbot.conversation import Statement
 
 
 class MongoAdapterTestCase(TestCase):
@@ -22,7 +22,7 @@ class MongoAdapterTestCase(TestCase):
             client.server_info()
 
             cls.adapter = MongoDatabaseAdapter(
-                database_uri='mongodb://localhost:27017/chatterbot_test_database'
+                database_uri='mongodb://localhost:27017/pychatbot_test_database'
             )
 
             cls.has_mongo_connection = True
@@ -117,7 +117,7 @@ class MongoDatabaseAdapterTestCase(MongoAdapterTestCase):
         self.assertEqual(random_statement.text, text)
 
     def test_get_random_no_data(self):
-        from chatterbot.storage import StorageAdapter
+        from pychatbot.storage import StorageAdapter
 
         with self.assertRaises(StorageAdapter.EmptyDatabaseException):
             self.adapter.get_random()

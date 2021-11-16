@@ -1,5 +1,5 @@
 import inspect
-from chatterbot import languages
+from pychatbot import languages
 from unittest import TestCase
 
 

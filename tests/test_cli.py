@@ -1,14 +1,14 @@
 from unittest import TestCase
-from chatterbot import __main__ as main
+from pychatbot import __main__ as main
 
 
 class CommandLineInterfaceTests(TestCase):
     """
-    Tests for the command line tools that are included with ChatterBot.
+    Tests for the command line tools that are included with pychatbot.
     """
 
-    def test_get_chatterbot_version(self):
-        version = main.get_chatterbot_version()
+    def test_get_pychatbot_version(self):
+        version = main.get_pychatbot_version()
         version_parts = version.split('.')
         self.assertEqual(len(version_parts), 3)
         self.assertTrue(version_parts[0].isdigit())

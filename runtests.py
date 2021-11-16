@@ -1,7 +1,7 @@
 #!./env/bin/python
 
 """
-This is the test runner for the ChatterBot's Django tests.
+This is the test runner for the pychatbot's Django tests.
 """
 
 import os

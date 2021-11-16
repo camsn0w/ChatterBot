@@ -1,5 +1,5 @@
 from unittest import TestCase
-from chatterbot.conversation import Statement
+from pychatbot.conversation import Statement
 
 
 class StatementTests(TestCase):

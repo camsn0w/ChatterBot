@@ -1,10 +1,10 @@
-from tests_django.base_case import ChatterBotTestCase
-from chatterbot.trainers import ChatterBotCorpusTrainer
+from tests_django.base_case import pychatbotTestCase
+from pychatbot.trainers import pychatbotCorpusTrainer
 
 
-class ChatterBotCorpusTrainingTestCase(ChatterBotTestCase):
+class pychatbotCorpusTrainingTestCase(pychatbotTestCase):
     """
-    Test case for training with data from the ChatterBot Corpus.
+    Test case for training with data from the pychatbot Corpus.
 
     Note: This class has a mirror tests/training_tests/
     """
@@ -12,7 +12,7 @@ class ChatterBotCorpusTrainingTestCase(ChatterBotTestCase):
     def setUp(self):
         super().setUp()
 
-        self.trainer = ChatterBotCorpusTrainer(
+        self.trainer = pychatbotCorpusTrainer(
             self.chatbot,
             show_training_progress=False
         )
@@ -22,14 +22,14 @@ class ChatterBotCorpusTrainingTestCase(ChatterBotTestCase):
         self.chatbot.storage.drop()
 
     def test_train_with_english_greeting_corpus(self):
-        self.trainer.train('chatterbot.corpus.english.greetings')
+        self.trainer.train('pychatbot.corpus.english.greetings')
 
         results = list(self.chatbot.storage.filter(text='Hello'))
 
         self.assertGreater(len(results), 1)
 
     def test_train_with_english_greeting_corpus_tags(self):
-        self.trainer.train('chatterbot.corpus.english.greetings')
+        self.trainer.train('pychatbot.corpus.english.greetings')
 
         results = list(self.chatbot.storage.filter(text='Hello'))
 
@@ -39,15 +39,15 @@ class ChatterBotCorpusTrainingTestCase(ChatterBotTestCase):
 
     def test_train_with_multiple_corpora(self):
         self.trainer.train(
-            'chatterbot.corpus.english.greetings',
-            'chatterbot.corpus.english.conversations',
+            'pychatbot.corpus.english.greetings',
+            'pychatbot.corpus.english.conversations',
         )
         results = list(self.chatbot.storage.filter(text='Hello'))
 
         self.assertGreater(len(results), 1)
 
     def test_train_with_english_corpus(self):
-        self.trainer.train('chatterbot.corpus.english')
+        self.trainer.train('pychatbot.corpus.english')
         results = list(self.chatbot.storage.filter(text='Hello'))
 
         self.assertGreater(len(results), 1)

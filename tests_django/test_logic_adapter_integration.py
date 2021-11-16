@@ -1,8 +1,8 @@
-from tests_django.base_case import ChatterBotTestCase
-from chatterbot.conversation import Statement
+from tests_django.base_case import pychatbotTestCase
+from pychatbot.conversation import Statement
 
 
-class LogicIntegrationTestCase(ChatterBotTestCase):
+class LogicIntegrationTestCase(pychatbotTestCase):
     """
     Tests to make sure that logic adapters
     function correctly when using Django.
@@ -14,7 +14,7 @@ class LogicIntegrationTestCase(ChatterBotTestCase):
         self.chatbot.storage.create(text='Default statement')
 
     def test_best_match(self):
-        from chatterbot.logic import BestMatch
+        from pychatbot.logic import BestMatch
 
         adapter = BestMatch(self.chatbot)
 
@@ -35,7 +35,7 @@ class LogicIntegrationTestCase(ChatterBotTestCase):
         self.assertEqual(response.confidence, 1)
 
     def test_mathematical_evaluation(self):
-        from chatterbot.logic import MathematicalEvaluation
+        from pychatbot.logic import MathematicalEvaluation
 
         adapter = MathematicalEvaluation(self.chatbot)
 
@@ -47,7 +47,7 @@ class LogicIntegrationTestCase(ChatterBotTestCase):
         self.assertEqual(response.confidence, 1)
 
     def test_time(self):
-        from chatterbot.logic import TimeLogicAdapter
+        from pychatbot.logic import TimeLogicAdapter
 
         adapter = TimeLogicAdapter(self.chatbot)
 

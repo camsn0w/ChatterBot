@@ -1,6 +1,6 @@
 from unittest import TestCase
-from chatterbot import languages
-from chatterbot import tagging
+from pychatbot import languages
+from pychatbot import tagging
 
 
 class PosLemmaTaggerTests(TestCase):

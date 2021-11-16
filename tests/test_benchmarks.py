@@ -8,9 +8,9 @@ from unittest import skip
 from warnings import warn
 from random import choice
 from tests.base_case import ChatBotSQLTestCase, ChatBotMongoTestCase
-from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer, UbuntuCorpusTrainer
-from chatterbot.logic import BestMatch
-from chatterbot import comparisons, response_selection, utils
+from pychatbot.trainers import ListTrainer, pychatbotCorpusTrainer, UbuntuCorpusTrainer
+from pychatbot.logic import BestMatch
+from pychatbot import comparisons, response_selection, utils
 
 
 WORDBANK = (
@@ -37,8 +37,8 @@ def get_list_trainer(chatbot):
     )
 
 
-def get_chatterbot_corpus_trainer(chatbot):
-    return ChatterBotCorpusTrainer(
+def get_pychatbot_corpus_trainer(chatbot):
+    return pychatbotCorpusTrainer(
         chatbot,
         show_training_progress=False
     )
@@ -86,7 +86,7 @@ class SqlBenchmarkingTests(BenchmarkingMixin, ChatBotSQLTestCase):
 
     def get_kwargs(self):
         kwargs = super().get_kwargs()
-        kwargs['storage_adapter'] = 'chatterbot.storage.SQLStorageAdapter'
+        kwargs['storage_adapter'] = 'pychatbot.storage.SQLStorageAdapter'
         return kwargs
 
     def test_levenshtein_distance_comparisons(self):
@@ -119,12 +119,12 @@ class SqlBenchmarkingTests(BenchmarkingMixin, ChatBotSQLTestCase):
 
         self.assert_response_duration_is_less_than(3)
 
-    def test_get_response_after_chatterbot_corpus_training(self):
+    def test_get_response_after_pychatbot_corpus_training(self):
         """
-        Test response time after training with the ChatterBot corpus.
+        Test response time after training with the pychatbot corpus.
         """
-        trainer = get_chatterbot_corpus_trainer(self.chatbot)
-        trainer.train('chatterbot.corpus')
+        trainer = get_pychatbot_corpus_trainer(self.chatbot)
+        trainer.train('pychatbot.corpus')
 
         self.assert_response_duration_is_less_than(3)
 
@@ -146,7 +146,7 @@ class MongoBenchmarkingTests(BenchmarkingMixin, ChatBotMongoTestCase):
 
     def get_kwargs(self):
         kwargs = super().get_kwargs()
-        kwargs['storage_adapter'] = 'chatterbot.storage.MongoDatabaseAdapter'
+        kwargs['storage_adapter'] = 'pychatbot.storage.MongoDatabaseAdapter'
         return kwargs
 
     def test_levenshtein_distance_comparisons(self):
@@ -179,12 +179,12 @@ class MongoBenchmarkingTests(BenchmarkingMixin, ChatBotMongoTestCase):
 
         self.assert_response_duration_is_less_than(3)
 
-    def test_get_response_after_chatterbot_corpus_training(self):
+    def test_get_response_after_pychatbot_corpus_training(self):
         """
-        Test response time after training with the ChatterBot corpus.
+        Test response time after training with the pychatbot corpus.
         """
-        trainer = get_chatterbot_corpus_trainer(self.chatbot)
-        trainer.train('chatterbot.corpus')
+        trainer = get_pychatbot_corpus_trainer(self.chatbot)
+        trainer.train('pychatbot.corpus')
 
         self.assert_response_duration_is_less_than(3)
 

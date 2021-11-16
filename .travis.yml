@@ -11,7 +11,7 @@ services:
   - mongodb
 
 env:
-  - CHATTERBOT_SHOW_TRAINING_PROGRESS=0
+  - pychatbot_SHOW_TRAINING_PROGRESS=0
 
 install:
   - pip install tox coveralls codeclimate-test-reporter

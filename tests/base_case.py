@@ -1,5 +1,5 @@
 from unittest import TestCase, SkipTest
-from chatterbot import ChatBot
+from pychatbot import ChatBot
 
 
 class ChatBotTestCase(TestCase):
@@ -50,8 +50,8 @@ class ChatBotMongoTestCase(ChatBotTestCase):
 
     def get_kwargs(self):
         kwargs = super().get_kwargs()
-        kwargs['database_uri'] = 'mongodb://localhost:27017/chatterbot_test_database'
-        kwargs['storage_adapter'] = 'chatterbot.storage.MongoDatabaseAdapter'
+        kwargs['database_uri'] = 'mongodb://localhost:27017/pychatbot_test_database'
+        kwargs['storage_adapter'] = 'pychatbot.storage.MongoDatabaseAdapter'
         return kwargs
 
 
@@ -59,5 +59,5 @@ class ChatBotSQLTestCase(ChatBotTestCase):
 
     def get_kwargs(self):
         kwargs = super().get_kwargs()
-        kwargs['storage_adapter'] = 'chatterbot.storage.SQLStorageAdapter'
+        kwargs['storage_adapter'] = 'pychatbot.storage.SQLStorageAdapter'
         return kwargs

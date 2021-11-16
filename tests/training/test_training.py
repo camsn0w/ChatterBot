@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.trainers import Trainer
-from chatterbot.conversation import Statement
+from pychatbot.trainers import Trainer
+from pychatbot.conversation import Statement
 
 
 class TrainingTests(ChatBotTestCase):

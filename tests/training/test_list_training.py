@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.trainers import ListTrainer
-from chatterbot import preprocessors
+from pychatbot.trainers import ListTrainer
+from pychatbot import preprocessors
 
 
 class ListTrainingTests(ChatBotTestCase):
@@ -235,7 +235,7 @@ class ListTrainingTests(ChatBotTestCase):
         self.assertEqual(response2.text, "D")
 
 
-class ChatterBotResponseTests(ChatBotTestCase):
+class pychatbotResponseTests(ChatBotTestCase):
 
     def setUp(self):
         super().setUp()

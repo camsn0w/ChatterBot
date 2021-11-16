@@ -1,6 +1,6 @@
 from unittest import TestCase
-from chatterbot.conversation import Statement
-from chatterbot.storage.sql_storage import SQLStorageAdapter
+from pychatbot.conversation import Statement
+from pychatbot.storage.sql_storage import SQLStorageAdapter
 
 
 class SQLStorageAdapterTestCase(TestCase):
@@ -99,7 +99,7 @@ class SQLStorageAdapterTests(SQLStorageAdapterTestCase):
         self.assertEqual(random_statement.text, "New statement")
 
     def test_get_random_no_data(self):
-        from chatterbot.storage import StorageAdapter
+        from pychatbot.storage import StorageAdapter
 
         with self.assertRaises(StorageAdapter.EmptyDatabaseException):
             self.adapter.get_random()

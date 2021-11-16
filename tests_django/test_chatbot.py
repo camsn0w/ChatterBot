@@ -1,8 +1,8 @@
-from tests_django.base_case import ChatterBotTestCase
-from chatterbot.conversation import Statement
+from tests_django.base_case import pychatbotTestCase
+from pychatbot.conversation import Statement
 
 
-class ChatBotTests(ChatterBotTestCase):
+class ChatBotTests(pychatbotTestCase):
 
     def test_get_response_text(self):
         self.chatbot.get_response(text='Test')
@@ -267,7 +267,7 @@ class ChatBotTests(ChatterBotTestCase):
 
     def test_search_text_results_after_training(self):
         """
-        ChatterBot should return close matches to an input
+        pychatbot should return close matches to an input
         string when filtering using the search_text parameter.
         """
         self.chatbot.storage.create_many([
@@ -288,7 +288,7 @@ class ChatBotTests(ChatterBotTestCase):
 
     def test_search_text_contains_results_after_training(self):
         """
-        ChatterBot should return close matches to an input
+        pychatbot should return close matches to an input
         string when filtering using the search_text parameter.
         """
         self.chatbot.storage.create_many([

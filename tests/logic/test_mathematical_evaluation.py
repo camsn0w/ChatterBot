@@ -1,6 +1,6 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.logic import MathematicalEvaluation
-from chatterbot.conversation import Statement
+from pychatbot.logic import MathematicalEvaluation
+from pychatbot.conversation import Statement
 
 
 class MathematicalEvaluationTests(ChatBotTestCase):

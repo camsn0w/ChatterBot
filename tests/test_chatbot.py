@@ -1,9 +1,9 @@
 from tests.base_case import ChatBotTestCase
-from chatterbot.logic import LogicAdapter
-from chatterbot.conversation import Statement
+from pychatbot.logic import LogicAdapter
+from pychatbot.conversation import Statement
 
 
-class ChatterBotResponseTestCase(ChatBotTestCase):
+class pychatbotResponseTestCase(ChatBotTestCase):
 
     def test_conversation_values_persisted_to_response(self):
         response = self.chatbot.get_response('Hello', persist_values_to_response={
@@ -297,7 +297,7 @@ class ChatterBotResponseTestCase(ChatBotTestCase):
 
     def test_search_text_results_after_training(self):
         """
-        ChatterBot should return close matches to an input
+        pychatbot should return close matches to an input
         string when filtering using the search_text parameter.
         """
         self.chatbot.storage.create_many([

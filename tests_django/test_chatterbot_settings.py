@@ -5,11 +5,11 @@ from django.conf import settings
 class SettingsTestCase(TestCase):
 
     def test_modified_settings(self):
-        with self.settings(CHATTERBOT={'name': 'Jim'}):
-            self.assertIn('name', settings.CHATTERBOT)
-            self.assertEqual('Jim', settings.CHATTERBOT['name'])
+        with self.settings(pychatbot={'name': 'Jim'}):
+            self.assertIn('name', settings.pychatbot)
+            self.assertEqual('Jim', settings.pychatbot['name'])
 
     def test_name_setting(self):
         with self.settings():
-            self.assertIn('name', settings.CHATTERBOT)
-            self.assertEqual('Test Django ChatterBot', settings.CHATTERBOT['name'])
+            self.assertIn('name', settings.pychatbot)
+            self.assertEqual('Test Django pychatbot', settings.pychatbot['name'])
