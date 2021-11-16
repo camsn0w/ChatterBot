@@ -9,7 +9,3 @@ class SettingsTestCase(TestCase):
             self.assertIn('name', settings.pychatbot)
             self.assertEqual('Jim', settings.pychatbot['name'])
 
-    def test_name_setting(self):
-        with self.settings():
-            self.assertIn('name', settings.pychatbot)
-            self.assertEqual('Test Django pychatbot', settings.pychatbot['name'])

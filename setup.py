@@ -48,9 +48,6 @@ setup(
     version=VERSION,
     url=URL,
     download_url='{}/tarball/{}'.format(URL, VERSION),
-    project_urls={
-        'Documentation': 'https://pychatbot.readthedocs.io',
-    },
     description='pychatbot is a machine learning, conversational dialog engine.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
