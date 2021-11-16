@@ -3,16 +3,11 @@ import io
 import glob
 from pathlib import Path
 
-try:
-    from chatterbot_corpus.corpus import DATA_DIRECTORY
-except (ImportError, ModuleNotFoundError):
-    # Default to the home directory of the current user
-    DATA_DIRECTORY = os.path.join(
-        Path.home(),
-        'chatterbot_corpus',
-        'data'
-    )
-
+# Default to the home directory of the current user
+DATA_DIRECTORY = os.path.join(
+    "chatterbot",
+    'data'
+)
 
 CORPUS_EXTENSION = 'yml'
 
