@@ -1,0 +1,9 @@
+mathparse
+spacy
+python-dateutil
+sqlalchemy
+pytz
+nltk
+pyyaml
+Django
+setuptools
