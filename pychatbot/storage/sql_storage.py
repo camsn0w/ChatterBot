@@ -1,3 +1,4 @@
+from sqlalchemy import inspect
 from pychatbot.storage import StorageAdapter
 
 
@@ -43,7 +44,7 @@ class SQLStorageAdapter(StorageAdapter):
                 dbapi_connection.execute('PRAGMA journal_mode=WAL')
                 dbapi_connection.execute('PRAGMA synchronous=NORMAL')
 
-        if not self.engine.dialect.has_table(self.engine, 'Statement'):
+        if not inspect(self.engine).dialect.has_table(self.engine.connect(), 'Statement'):
             self.create_database()
 
         self.Session = sessionmaker(bind=self.engine, expire_on_commit=True)
